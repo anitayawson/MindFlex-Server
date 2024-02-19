@@ -1,0 +1,98 @@
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> }
+ */
+exports.seed = async function (knex) {
+  // Deletes ALL existing entries
+  await knex("therapists").del();
+  await knex("therapists").insert([
+    {
+      id: 1,
+      name: "Dr. Maya Gould",
+      role: "Clinical Psychologist",
+      location: "Oakville, Ontario",
+      rating: 4.8,
+      experience_years: 10,
+      price: 100,
+      image: "/therapist_images/maya_gould.jpg",
+      bio: "Dr. Maya Gould, a seasoned clinical psychologist based in Oakville, Ontario, brings over a decade of expertise to her practice. With a compassionate approach and deep understanding of human behavior, she specializes in guiding individuals through various psychological challenges. Her personalized interventions and evidence-based practices aim to foster trust and openness in every session, creating a safe space for healing and growth. Dr. Gould is particularly passionate about helping clients overcome seasonal depression, offering practical strategies and emotional support tailored to their unique needs. Trusted by her clients for her empathy and dedication, Dr. Gould is committed to guiding them on their journey towards mental wellness.",
+    },
+    {
+      id: 2,
+      name: "Dr. Brian Whitby",
+      role: "Counseling Psychologist",
+      location: "Toronto, Ontario",
+      rating: 4.5,
+      experience_years: 8,
+      price: 90,
+      image: "/therapist_images/brian_whitby.jpg",
+      bio: "Dr. Brian Whitby is a dedicated counseling psychologist based in Toronto, Ontario, with over eight years of experience in the field. He is passionate about helping individuals navigate life’s challenges and develop the resilience to overcome them. Dr. Koval’s warm and empathetic approach creates a safe space for clients to explore their thoughts and emotions, fostering a sense of trust and comfort. He is particularly skilled in helping clients manage anxiety and stress, offering practical strategies and emotional support to help them regain control over their lives. Dr. Koval is committed to providing personalized care and guidance to every client, empowering them to lead a fulfilling and meaningful life.",
+    },
+    {
+      id: 3,
+      name: "Dr. Sarah Kim",
+      role: "Clinical Psychologist",
+      location: "Vancouver, British Columbia",
+      rating: 4.7,
+      experience_years: 9,
+      price: 95,
+      image: "/therapist_images/sarah_kim.jpg",
+      bio: "Dr. Sarah Kim is a compassionate clinical psychologist based in Vancouver, British Columbia, with over nine years of experience in the field. She is dedicated to helping individuals overcome psychological challenges and lead fulfilling lives. Dr. Kim’s warm and empathetic approach creates a safe space for clients to explore their thoughts and emotions, fostering a sense of trust and comfort. She is particularly skilled in helping clients manage depression, offering practical strategies and emotional support to help them regain control over their lives. Dr. Kim is committed to providing personalized care and guidance to every client, empowering them to lead a fulfilling and meaningful life.",
+    },
+    {
+      id: 4,
+      name: "Dr. Ethan Carleson",
+      role: "Counseling Psychologist",
+      location: "Calgary, Alberta",
+      rating: 4.6,
+      experience_years: 7,
+      price: 85,
+      image: "/therapist_images/ethan_carleson.jpg",
+      bio: "Dr. Ethan Carleson is a dedicated counseling psychologist based in Calgary, Alberta, with over seven years of experience in the field. He is passionate about helping individuals navigate life’s challenges and develop the resilience to overcome them. Dr. Lee’s warm and empathetic approach creates a safe space for clients to explore their thoughts and emotions, fostering a sense of trust and comfort. He is particularly skilled in helping clients manage anxiety and stress, offering practical strategies and emotional support to help them regain control over their lives. Dr. Lee is committed to providing personalized care and guidance to every client, empowering them to lead a fulfilling and meaningful life.",
+    },
+    {
+      id: 5,
+      name: "Dr. Ruth Brennan",
+      role: "Clinical Psychologist",
+      location: "Montreal, Quebec",
+      rating: 4.9,
+      experience_years: 11,
+      price: 105,
+      image: "/therapist_images/ruth_brennan.jpg",
+      bio: "Dr. Emma White, a seasoned clinical psychologist based in Montreal, Quebec, brings over a decade of expertise to her practice. With a compassionate approach and deep understanding of human behavior, she specializes in guiding individuals through various psychological challenges. Her personalized interventions and evidence-based practices aim to foster trust and openness in every session, creating a safe space for healing and growth. Dr. White is particularly passionate about helping clients overcome seasonal depression, offering practical strategies and emotional support tailored to their unique needs. Trusted by her clients for her empathy and dedication, Dr. White is committed to guiding them on their journey towards mental wellness.",
+    },
+    {
+      id: 6,
+      name: "Dr. Matthew Griff",
+      role: "Counseling Psychologist",
+      location: "Edmonton, Alberta",
+      rating: 4.4,
+      experience_years: 6,
+      price: 80,
+      image: "/therapist_images/matthew_griff.jpg",
+      bio: "Dr. Matthew Griff is a dedicated counseling psychologist based in Edmonton, Alberta, with over six years of experience in the field. He is passionate about helping individuals navigate life’s challenges and develop the resilience to overcome them. Dr. Griff’s warm and empathetic approach creates a safe space for clients to explore their thoughts and emotions, fostering a sense of trust and comfort. He is particularly skilled in helping clients manage anxiety and stress, offering practical strategies and emotional support to help them regain control over their lives. Dr. Griff is committed to providing personalized care and guidance to every client, empowering them to lead a fulfilling and meaningful life.",
+    },
+    {
+      id: 7,
+      name: "Dr. Emilio Lillard",
+      role: "Clinical Psychologist",
+      location: "Winnipeg, Manitoba",
+      rating: 4.7,
+      experience_years: 9,
+      price: 95,
+      image: "/therapist_images/emilio_lillard.jpg",
+      bio: "Dr. Lillard is a compassionate clinical psychologist based in Winnipeg, Manitoba, with over nine years of experience in the field. He is dedicated to helping individuals overcome psychological challenges and lead fulfilling lives. Dr. Lillard's warm and empathetic approach creates a safe space for clients to explore their thoughts and emotions, fostering a sense of trust and comfort. He is particularly skilled in helping clients manage depression, offering practical strategies and emotional support to help them regain control over their lives. Dr. Lillard is committed to providing personalized care and guidance to every client, empowering them to lead a fulfilling and meaningful life.",
+    },
+    {
+      id: 8,
+      name: "Dr. Siobhan Harry",
+      role: "Counseling Psychologist",
+      location: "Halifax, Nova Scotia",
+      rating: 4.6,
+      experience_years: 7,
+      price: 85,
+      image: "/therapist_images/siobhan_harry.jpg",
+      bio: "Dr. Siobhan is a dedicated counseling psychologist based in Halifax, Nova Scotia, with over seven years of experience in the field. She is passionate about helping individuals navigate life’s challenges and develop the resilience to overcome them. Dr. Siobhan's warm and empathetic approach creates a safe space for clients to explore their thoughts and emotions, fostering a sense of trust and comfort. She is particularly skilled in helping clients manage anxiety and stress, offering practical strategies and emotional support to help them regain control over their lives. Dr. Siobhan is committed to providing personalized care and guidance to every client, empowering them to lead a fulfilling and meaningful life.",
+    },
+  ]);
+};
