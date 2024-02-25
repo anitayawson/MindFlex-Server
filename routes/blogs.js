@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const knex = require("knex")(require("../knexfile.js"));
+const fs = require("fs");
 
 router.get("/blogs", (req, res) => {
   knex

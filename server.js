@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
+const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/users");
 const blogRoutes = require("./routes/blogs");
 const therapistRoutes = require("./routes/therapists");
 const reflectionRoutes = require("./routes/reflections");
@@ -16,6 +18,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/api/auth", authRoutes);
+app.use("/api", userRoutes);
 app.use("/api", blogRoutes);
 app.use("/api", therapistRoutes);
 app.use("/api", reflectionRoutes);
