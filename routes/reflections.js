@@ -45,23 +45,22 @@ router.get("/reflections", (req, res) => {
     });
 });
 
-router.get("/reflections/:id", (req, res) => {
-  const { id } = req.params;
+router.get("/reflections/user/:userId", (req, res) => {
+  const { userId } = req.params;
   knex
     .select("*")
     .from("reflections")
-    .where({ id })
-    .first()
+    .where({ user_id: userId })
     .then((data) => {
-      if (data) {
+      if (data && data.length > 0) {
         res.status(200).json(data);
       } else {
-        res.status(404).json({ message: "Reflection not found" });
+        res.status(404).json({ message: "No reflections found for this user" });
       }
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).json({ message: "Error retrieving reflection" });
+      res.status(500).json({ message: "Error retrieving reflections" });
     });
 });
 
