@@ -40,9 +40,15 @@ exports.signup = async (req, res) => {
 
     // Store user details in the database
     await db("users").insert({ name, email, password: hashedPassword });
+
+    // Fetch the newly inserted user from the database
+    const newUser = await db("users").where({ email }).first();
+
     const token = jwt.sign({ email }, JWT_SECRET, { expiresIn: "24h" });
 
-    res.status(201).json({ message: "Sign up successful!", token });
+    res
+      .status(201)
+      .json({ message: "Sign up successful!", user: newUser, token });
   } catch (error) {
     console.error("Error signing up:", error);
     res.status(500).json({ error: "Internal server error" });
@@ -72,7 +78,7 @@ exports.login = async (req, res) => {
       expiresIn: "24h",
     });
 
-    res.status(200).json({ message: "Log in successful", token, id: user.id });
+    res.status(200).json({ message: "Log in successful", user, token });
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).json({ error: "Internal server error" });

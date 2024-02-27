@@ -52,11 +52,7 @@ router.get("/reflections/user/:userId", (req, res) => {
     .from("reflections")
     .where({ user_id: userId })
     .then((data) => {
-      if (data && data.length > 0) {
-        res.status(200).json(data);
-      } else {
-        res.status(404).json({ message: "No reflections found for this user" });
-      }
+      res.status(200).json(data);
     })
     .catch((err) => {
       console.error(err);
